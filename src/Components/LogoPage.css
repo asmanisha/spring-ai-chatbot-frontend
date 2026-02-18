@@ -1,0 +1,56 @@
+nav{
+    width:100%;
+    z-index: 10;
+    position: fixed;top: 0;
+    left: 0;
+    display:flex
+    
+}
+.img1{
+    width:80px;
+}
+.logo-container {
+    width: 85em;
+    height: 100vh;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    color:white;
+    padding:10px;
+    list-style: none;
+}
+
+nav ul li {
+    
+    margin:0 5px;
+    
+}
+
+nav ul li a, .login-btn {
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+    
+}
+
+.logo-content {
+    font-family: "Bungee",sans-serif;
+    text-align: center;
+    margin-top: 300px;
+    margin-left: 50%;
+    color: white;
+    justify-content: center;
+}

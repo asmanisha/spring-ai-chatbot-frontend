@@ -1,0 +1,204 @@
+/* Remove default browser eye icon for password inputs */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-webkit-reveal,
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-caps-lock-indicator,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    display: none !important;
+    pointer-events: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222; /* Change background for better visibility */
+    background-size: cover;
+    background-position: center;
+}
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    overflow: hidden;
+}
+.wrapper {
+    position: relative;
+    width: 420px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    color:black;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    padding: 20px;
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+/* Form Box */
+.wrapper .form-box {
+    width: 100%;
+    padding: 30px;
+}
+
+.wrapper .form-box.login {
+    transition: transform 0.2s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transform: translateX(0);
+}
+
+/* Form Styling */
+form h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input Box Styling */
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    padding: 15px;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Icon inside Input Box */
+.input-box .icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: #f8d7da;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* Remember Me & Forgot Password */
+form .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: -10px 0 20px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Button */
+form button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #ddd;
+}
+
+/* Register Link */
+form .register-link {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+.link-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.link-button:hover {
+    color: #555;
+}
