@@ -8,7 +8,7 @@ function ChatComponent() {
     const askAI = async () => {
         setIsLoading(true);
         try {
-            const res = await fetch(`http://localhost:8080/ask-ai?prompt=${prompt}`);
+            const res = await fetch(`https://spring-ai-chatbot-backend.onrender.com/ask-ai?prompt=${encodeURIComponent(prompt)}`);
             const data = await res.text();
             setResponse(data);
             setPrompt("");

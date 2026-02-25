@@ -11,7 +11,7 @@ function RecipeGenerator() {
         setIsLoading(true);
         try {
             const response = await fetch(
-                `http://localhost:8080/recipe-creator?ingredients=${ingredients}&dietaryRestrictions=${dietaryRestrictions}&cuisine=${cuisine}`
+                `https://spring-ai-chatbot-backend.onrender.com/recipe-creator?ingredients=${encodeURIComponent(ingredients)}&dietaryRestrictions=${encodeURIComponent(dietaryRestrictions)}&cuisine=${encodeURIComponent(cuisine)}`
             );
             const data = await response.text();
             setRecipe(data);
